@@ -16,7 +16,7 @@ import 'swiper/css';
 
 import 'swiper/css/pagination';
 
-
+{/*
 
 const testimonial = () => {
   return (
@@ -31,6 +31,7 @@ const testimonial = () => {
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}*/}
+        {/*
         <SwiperSlide className="testimonial">
           <div className="client__avatar">
             <img src={AVTRI} alt="avatar" />
@@ -85,3 +86,4 @@ const testimonial = () => {
   );
 };
 export default testimonial;
+*/}

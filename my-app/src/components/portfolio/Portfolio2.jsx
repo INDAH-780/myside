@@ -6,7 +6,7 @@ const Portfolio = () => {
     const [data, setData] = useState([]);
 
     useEffect(()=> {
-        axios.get("http://localhost:8000/api/testimonial").then(response => {
+        axios.get("http://localhost:8000/api/portfolio").then(response => {
             const formattedData = response.data.data.map(item => ({
                 id:item._id,
                 image: item.image,
