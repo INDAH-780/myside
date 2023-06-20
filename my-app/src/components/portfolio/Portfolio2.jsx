@@ -3,17 +3,18 @@ import axios from 'axios';
 import "./portfolio.css";
 
 const Portfolio = () => {
+    const [data, setData] = useState([]);
 
     useEffect(()=> {
         axios.get("http://localhost:8000/api/testimonial").then(response => {
-            const formatData = response.data.data.map(item => ({
+            const formattedData = response.data.data.map(item => ({
                 id:item._id,
                 image: item.image,
                 title:item.title,
                 github: item.github,
                 demo: item.demo
             }));
-            SVGMetadataElement(formattedData)
+            setData(formattedData)
         }).catch(error => {
             console.log("error fetching portfolio data:", error);
         })
@@ -21,10 +22,10 @@ const Portfolio = () => {
     return (
         <section id="portfolio">
             <h5>My Recent Work</h5>
-        <h2>Porfolio</h2>
+        <h2>Portfolio</h2>
 
         <div className="container portfolio__container">
-        {DataTransfer.map(({id, image, title, github, demo})=> {
+        {data.map(({id, image, title, github, demo})=> {
             <article className="portfolio__item">
             <div className="portfolio__item-image">
               <img src={image} alt= {title} />

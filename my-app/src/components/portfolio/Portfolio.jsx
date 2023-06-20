@@ -7,7 +7,7 @@ import IMGI3 from '../../assets/portfolio3.jpeg'
 import IMGI4 from '../../assets/portfolio4.jpeg'
 import IMGI5 from "../../assets/portfolio6.jpeg";
 
-
+{/*
 const Portfolio = () => {
     return (
       <section id="portfolio">
@@ -122,3 +122,4 @@ const Portfolio = () => {
     );
 }
 export default Portfolio
+*/}
