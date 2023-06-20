@@ -12,14 +12,13 @@ const Testimonial = () => {
 
     useEffect(() => {
       axios
-        .get("http://localhost:8000/api/testimonial")
+        .get("https://combative-moth-baseball-cap.cyclic.app/api/testimonial")
         .then((response) => {
           const formattedData = response.data.data.map((item) => ({
             id: item._id,
             avatar: item.avatar,
             name: item.name,
             review: item.review,
-           
           }));
           setData(formattedData);
         })
@@ -40,7 +39,7 @@ const Testimonial = () => {
           pagination={{ clickable: true }}
         >
           {
-            data.map(({ id, avatar, name, review }) => {
+            data.map(({ id, avatar, name, review }) => (
             
             <SwiperSlide key={id} className="testimonial">
               <div className="client_avatar">
@@ -48,8 +47,8 @@ const Testimonial = () => {
               </div>
               <h5>{name}</h5>
               <small className="client_review">{review}</small>
-            </SwiperSlide>;
-          })}
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
     );

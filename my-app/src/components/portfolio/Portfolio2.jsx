@@ -6,18 +6,21 @@ const Portfolio = () => {
     const [data, setData] = useState([]);
 
     useEffect(()=> {
-        axios.get("http://localhost:8000/api/portfolio").then(response => {
-            const formattedData = response.data.data.map(item => ({
-                id:item._id,
-                image: item.image,
-                title:item.title,
-                github: item.github,
-                demo: item.demo
+        axios
+          .get("https://combative-moth-baseball-cap.cyclic.app/api/portfolio")
+          .then((response) => {
+            const formattedData = response.data.data.map((item) => ({
+              id: item._id,
+              image: item.image,
+              title: item.title,
+              github: item.github,
+              demo: item.demo,
             }));
-            setData(formattedData)
-        }).catch(error => {
+            setData(formattedData);
+          })
+          .catch((error) => {
             console.log("error fetching portfolio data:", error);
-        })
+          });
     }, [])
     return (
         <section id="portfolio">
@@ -25,8 +28,8 @@ const Portfolio = () => {
         <h2>Portfolio</h2>
 
         <div className="container portfolio__container">
-        {data.map(({id, image, title, github, demo})=> {
-            <article className="portfolio__item">
+        {data.map(({id, image, title, github, demo})=> (
+            <article key={id} className="portfolio__item">
             <div className="portfolio__item-image">
               <img src={image} alt= {title} />
               <h3>{title}</h3>
@@ -44,7 +47,7 @@ const Portfolio = () => {
             </div>
           </article>
 
-        })}
+        ))}
           
           </div>
         </section>
