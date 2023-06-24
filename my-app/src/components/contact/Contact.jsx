@@ -40,7 +40,7 @@ const Contact = () => {
             <AiOutlineLinkedin className="contact__option__icon" />
             <h4>LinkedIn</h4>
             <h5>Profile</h5>
-            
+
             <a href="https://www.linkedin.com/in/indah-riscobelle-mbah-9a7327238">
               Tape me on LinkedIn
             </a>
@@ -49,7 +49,7 @@ const Contact = () => {
             <BsWhatsapp className="contact__option__icon" />
             <h4>Whatsapp</h4>
             <h5>Direct message</h5>
-            <a href="https://api.whatsapp.com/send?phone=+237652497999">
+            <a href="https://web.whatsapp.com/send?phone=+237652497999">
               Whatsapp me
             </a>
           </article>
